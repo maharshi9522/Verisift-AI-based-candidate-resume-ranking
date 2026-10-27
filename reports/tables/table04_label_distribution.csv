@@ -1,0 +1,5 @@
+Class Label,Integer ID,Raw Count,Cleaned Count,Proportion,Recruiter Meaning
+No Fit,0,4006,3993,49.99%,Irrelevant candidate profile for requisition
+Potential Fit,1,1999,1998,25.02%,"Partial alignment, transferable competencies, skill gaps"
+Good Fit,2,1995,1996,24.99%,Strong alignment across required competencies & experience
+Total,N/A,8000,7987,100.0%,Balanced 50/25/25 multi-class distribution

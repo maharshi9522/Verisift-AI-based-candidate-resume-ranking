@@ -1,0 +1,72 @@
+{
+  "model_name": "Verisift-FineTuned-SBERT-v2.0",
+  "base_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "architecture": {
+    "encoder": "6-layer MiniLM transformer (layers 4-5 fine-tuned, layers 0-3 frozen)",
+    "pooling": "Mean Pooling + L2 Normalization (384-dim)",
+    "features": "Concatenated [R, J, |R - J|, R * J] (1536-dim)",
+    "classification_head": "Linear(1536, 256) -> LayerNorm -> ReLU -> Dropout(0.2) -> Linear(256, 64) -> LayerNorm -> ReLU -> Dropout(0.1) -> Linear(64, 3)"
+  },
+  "training_environment": {
+    "device": "cpu",
+    "threads": 14,
+    "hardware": "Intel Core Ultra 5 125H, 16 GB RAM",
+    "pytorch_version": "2.14.1+cpu",
+    "transformers_version": "5.20.2"
+  },
+  "hyperparameters": {
+    "epochs": 2,
+    "batch_size": 16,
+    "encoder_lr": 3e-05,
+    "classifier_lr": 0.0008,
+    "max_length": 192,
+    "max_train_samples": 600,
+    "random_seed": 42,
+    "class_weights": [
+      0.6525054466230937,
+      1.3675799086757991,
+      1.3582766439909297
+    ]
+  },
+  "results": {
+    "best_epoch": 2,
+    "best_val_macro_f1": 0.42241849615290555,
+    "total_training_time_sec": 377.09,
+    "encoder_weight_update_verified": true,
+    "average_l2_weight_delta": 0.03151496755679224,
+    "weight_deltas_sample": {
+      "encoder.layer.4.attention.self.query.weight": 0.066739,
+      "encoder.layer.4.attention.self.query.bias": 0.003119,
+      "encoder.layer.4.attention.self.key.weight": 0.067763,
+      "encoder.layer.4.attention.self.key.bias": 9e-06,
+      "encoder.layer.4.attention.self.value.weight": 0.063536
+    }
+  },
+  "label_mapping": {
+    "No Fit": 0,
+    "Potential Fit": 1,
+    "Good Fit": 2
+  },
+  "history": {
+    "train_loss": [
+      1.1423234170988987,
+      1.0426845958358364
+    ],
+    "val_loss": [
+      1.0893252715468407,
+      1.0747498348355293
+    ],
+    "val_accuracy": [
+      0.4153225806451613,
+      0.4959677419354839
+    ],
+    "val_macro_f1": [
+      0.3244424596915348,
+      0.42241849615290555
+    ],
+    "epoch_times_sec": [
+      189.30136823654175,
+      187.0180082321167
+    ]
+  }
+}

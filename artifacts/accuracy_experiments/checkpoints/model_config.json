@@ -1,0 +1,50 @@
+{
+  "model_id": "M5_DenseCrossNet_512",
+  "architecture": "DenseCrossFeatureNet",
+  "embedding_backbone": "sentence-transformers/all-MiniLM-L6-v2",
+  "context_tokens": 512,
+  "feature_mode": "rich",
+  "input_dim": 1537,
+  "feature_breakdown": {
+    "resume_dense_dim": 384,
+    "job_dense_dim": 384,
+    "absolute_difference_dim": 384,
+    "elementwise_product_dim": 384,
+    "cosine_similarity_dim": 1
+  },
+  "network_specifications": {
+    "dual_encoder_branch": "Linear(768, 256) -> LayerNorm -> GELU -> Dropout(0.2)",
+    "interaction_branch": "Linear(769, 256) -> LayerNorm -> GELU -> Dropout(0.2)",
+    "fusion_head": "Linear(512, 256) -> LayerNorm -> GELU -> Dropout(0.15) -> Linear(256, 64) -> LayerNorm -> GELU -> Linear(64, 3)"
+  },
+  "training_hyperparameters": {
+    "batch_size": 64,
+    "optimizer": "AdamW",
+    "learning_rate": 0.0008,
+    "weight_decay": 0.0001,
+    "lr_scheduler": "ReduceLROnPlateau(mode='max', factor=0.5, patience=3)",
+    "early_stopping_patience": 8,
+    "best_epoch": 38,
+    "total_epochs": 40
+  },
+  "validation_performance": {
+    "val_accuracy": 0.8260,
+    "val_macro_f1": 0.8123,
+    "val_weighted_f1": 0.8260
+  },
+  "held_out_pair_test_performance": {
+    "test_accuracy": 0.8148,
+    "test_macro_f1": 0.7944,
+    "test_weighted_f1": 0.8134,
+    "ndcg@5": 0.9654,
+    "ndcg@10": 0.9705,
+    "pairwise_concordance": 0.8849
+  },
+  "checkpoint_file": "artifacts/accuracy_experiments/checkpoints/best_deep_model.pt",
+  "hardware_environment": {
+    "cpu": "Intel Core Ultra 5 125H (14 cores, 18 threads)",
+    "ram": "16 GB LPDDR5",
+    "torch_threads": 14,
+    "accelerator": "CPU (AVX-512 / OpenVINO optimizations)"
+  }
+}

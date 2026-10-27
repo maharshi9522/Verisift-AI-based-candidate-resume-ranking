@@ -1,0 +1,11 @@
+{
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "max_seq_length": 256,
+  "normalized": true,
+  "sample_count": 6228,
+  "unique_resumes": 642,
+  "unique_jobs": 280,
+  "created_at": "2026-10-26T10:31:50Z",
+  "dataset_hash": "51492e97ef2830e5c9b74be79f8b650a4f853e185c621b77c3391bb252d70fb0"
+}

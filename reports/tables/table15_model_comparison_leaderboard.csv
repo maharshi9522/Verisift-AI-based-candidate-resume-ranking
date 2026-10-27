@@ -1,0 +1,8 @@
+Rank,Model ID,Context Window,Features,Val Accuracy,Val Macro-F1,Test Accuracy,Test Macro-F1,nDCG@5,Pair Concordance
+1,M5_DenseCrossNet_512,512 tokens,"Rich (1,537d)",82.60%,0.8123,81.48%,0.7944,0.9654,88.49%
+2,M4_DeepResMLP_512,512 tokens,"Rich (1,537d)",81.98%,0.8076,80.85%,0.7892,0.958,87.31%
+3,M2_Baseline_MLP_512,512 tokens,"Standard (1,536d)",81.23%,0.8016,80.10%,0.7815,0.9521,86.74%
+4,M7_Weighted_DeepResMLP_512,512 tokens,"Rich (1,537d)",80.60%,0.7952,79.85%,0.7834,0.949,86.12%
+5,M3_Rich_MLP_512,512 tokens,"Rich (1,537d)",80.10%,0.7907,79.47%,0.778,0.9465,85.80%
+6,M1_Baseline_MLP_256,256 tokens,"Standard (1,536d)",79.72%,0.7858,78.97%,0.7712,0.938,84.55%
+7,M6_HistGradientBoosting,512 tokens,"Rich (1,537d)",72.34%,0.7082,71.59%,0.6991,0.892,79.40%

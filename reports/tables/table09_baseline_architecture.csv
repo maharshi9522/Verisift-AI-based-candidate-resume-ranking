@@ -1,0 +1,7 @@
+Layer Index,Layer Name,Dimensions
+0,Input Pairwise Vector,"1536d [R, J, |R-J|, R*J]"
+1,Linear Projection 1,1536 -> 256
+2,Normalization / Activation 1,"LayerNorm(256), ReLU(), Dropout(0.20)"
+3,Linear Projection 2,256 -> 64
+4,Normalization / Activation 2,"LayerNorm(64), ReLU(), Dropout(0.10)"
+5,Classification Output,"Linear(64, 3) -> Cross-Entropy Logits"

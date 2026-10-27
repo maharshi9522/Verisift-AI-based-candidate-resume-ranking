@@ -1,0 +1,6 @@
+Dimension,Identified Limitation,Engineering Mitigation
+Zero-Shot Generalization,"On entirely novel job categories (unseen JDs), accuracy is 54.46% vs 81.48% on known categories.",Display continuous ordinal relevance ranking scores rather than hard discrete labels; rank order (71.5% nDCG) remains reliable.
+Residual Resume Truncation,"Under 512-token context, 93.1% of resumes still exceed length limits (median 1,204 tokens).","Implemented section-aware multi-chunk mean-pooling (extracting skills, experience, projects separately)."
+Hardware Constraints,No discrete NVIDIA GPU; all deep learning computation runs on 14-thread Intel CPU.,"Precomputed dense embedding caching, allowing deep architecture sweeps to complete in seconds on CPU."
+Subjectivity of 'Potential Fit',Boundary between 'Potential Fit' and adjacent categories accounts for 74% of classification errors.,Ordinal scoring formula 100*(0.0*P0 + 0.5*P1 + 1.0*P2) smoothly handles threshold ambiguity without sharp penalties.
+Production Model Separation,New DenseCrossNet_512 checkpoint is validated in artifacts/ but not yet deployed to live API.,Preserved production checkpoint safety as mandated; ready for safe zero-downtime deployment.

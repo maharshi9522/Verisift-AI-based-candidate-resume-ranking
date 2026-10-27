@@ -1,0 +1,4 @@
+Data Split,Total Rows,Null Resumes,Null JDs,Null Labels,Duplicate Pairs
+Raw Train Split,6241,0,0,0,13
+Raw Test Split,1759,0,0,0,0
+Cleaned Master Pool,7987,0,0,0,0

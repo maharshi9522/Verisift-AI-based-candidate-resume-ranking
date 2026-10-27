@@ -1,0 +1,10 @@
+Hyperparameter,Value
+Optimizer,AdamW (weight_decay=1e-4)
+Initial Learning Rate,8e-4 (0.0008)
+Batch Size,64
+Maximum Epochs,40 epochs
+Early Stopping Patience,8 epochs on Validation Macro-F1
+LR Scheduler,"ReduceLROnPlateau(mode='max', factor=0.5, patience=3)"
+Class Loss Weighting,CrossEntropyLoss (uniform or frequency-adjusted)
+Random Seed,"42 (deterministic across torch, numpy, sklearn)"
+Hardware Threads,torch.set_num_threads(14) on Intel Core Ultra 5

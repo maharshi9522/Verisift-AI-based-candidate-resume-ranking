@@ -1,0 +1,5 @@
+Actual Class,Pred No Fit,Pred Potential Fit,Pred Good Fit,Class Recall (%)
+No Fit (399),354,28,17,88.72
+Potential Fit (200),38,139,23,69.5
+Good Fit (200),22,20,158,79.0
+Total Predicted,414,187,198,Acc: 81.48%

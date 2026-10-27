@@ -1,0 +1,82 @@
+{
+  "project": "Verisift",
+  "stage": "5B",
+  "version": "1.0.0",
+  "timestamp": "2026-10-26T15:30:00Z",
+  "primary_production_model": {
+    "name": "E4 PyTorch Pairwise MLP",
+    "artifact_path": "artifacts/semantic_ranker/semantic_ranker_mlp.pt",
+    "encoder": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "embedding_dim": 384,
+      "max_seq_length": 256,
+      "normalization": "L2_unit_norm"
+    },
+    "feature_extractor": {
+      "architecture": "Pairwise Interaction [r, j, |r-j|, r*j, cosine_sim]",
+      "input_dimension": 1536
+    },
+    "matching_head": {
+      "type": "PyTorch Sequential MLP",
+      "layers": [
+        {
+          "type": "Linear",
+          "in": 1536,
+          "out": 512
+        },
+        {
+          "type": "BatchNorm1d",
+          "features": 512
+        },
+        {
+          "type": "ReLU"
+        },
+        {
+          "type": "Dropout",
+          "p": 0.3
+        },
+        {
+          "type": "Linear",
+          "in": 512,
+          "out": 128
+        },
+        {
+          "type": "BatchNorm1d",
+          "features": 128
+        },
+        {
+          "type": "ReLU"
+        },
+        {
+          "type": "Dropout",
+          "p": 0.2
+        },
+        {
+          "type": "Linear",
+          "in": 128,
+          "out": 3
+        }
+      ]
+    },
+    "scoring_function": {
+      "formula": "100 * (0.0 * P(No Fit) + 0.5 * P(Potential Fit) + 1.0 * P(Good Fit))",
+      "scale": "0.0 - 100.0",
+      "interpretation": "Continuous Ordinal Relevance Score (Expected Value under Recruiter Utility Matrix)"
+    },
+    "performance": {
+      "held_out_accuracy": 0.5202,
+      "held_out_macro_f1": 0.4839,
+      "held_out_ndcg5": 0.7268,
+      "held_out_ndcg10": 0.7512,
+      "pairwise_concordance": 0.7195
+    }
+  },
+  "long_context_adapter": {
+    "model_id": "BAAI/bge-m3",
+    "embedding_dim": 1024,
+    "max_seq_length": 8192,
+    "feature_dim": 4096,
+    "status": "Staged for GPU/offline batch processing",
+    "cached_data": "artifacts/long_context_transformer/embeddings_cache/bge_m3_jds_cache.pt"
+  }
+}

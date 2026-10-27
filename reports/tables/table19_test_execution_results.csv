@@ -1,0 +1,10 @@
+Test Suite / Module,Tests Count,Passed,Failed,Execution Time,Focus
+test_auth.py,10,10,0,1.82s,"JWT login, token refresh, password hashing"
+test_jobs.py,6,6,0,1.45s,"Job requisition creation, ownership, skills validation"
+test_candidates.py,13,13,0,3.12s,"Resume PDF/DOCX upload, hashing, candidate retrieval"
+test_matching_service.py,5,5,0,2.40s,"Pairwise feature generation, neural inference, scoring bounds"
+test_resume_parser.py,9,9,0,1.95s,"Contact info regex, section boundaries, chunking"
+test_shortlist_export.py,11,11,0,2.68s,"CSV and JSON export, tie-breaking, authorization"
+test_finetuned_sbert_and_explainability.py,12,12,0,4.15s,"Evidence grounding, competency coverage, peer comparisons"
+test_model_pipeline.py,4,4,0,8.54s,End-to-end model pipeline integration
+Total Backend Test Suite,70,70,0,26.11s,100% Passing Test Suite

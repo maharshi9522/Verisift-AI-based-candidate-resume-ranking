@@ -1,0 +1,35 @@
+{
+  "stage": "4B",
+  "version": "1.0.0",
+  "normalization_pipeline": {
+    "unicode_normalization": "NFKC",
+    "replacement_character_handling": "replace_with_space",
+    "typographic_quotes": "convert_to_standard_ascii",
+    "dashes": "convert_to_hyphen",
+    "bullets": "standardize_to_hyphen_marker",
+    "line_endings": "convert_to_unix_lf",
+    "control_characters": "strip_non_printable",
+    "whitespace": "collapse_horizontal_max_two_newlines",
+    "lowercasing_applied": false,
+    "stopwords_removed": false,
+    "stemming_applied": false,
+    "technical_tokens_preserved": [
+      "C++",
+      "C#",
+      ".NET",
+      "Node.js",
+      "CI/CD",
+      "SQL/NoSQL",
+      "versions"
+    ]
+  },
+  "validation_split_design": {
+    "method": "GroupKFold",
+    "n_splits": 5,
+    "group_column": "job_description_text_clean",
+    "guaranteed_disjoint_jobs": true,
+    "train_clean_samples": 6228,
+    "dropped_exact_duplicates": 1,
+    "dropped_conflicting_pairs": 12
+  }
+}

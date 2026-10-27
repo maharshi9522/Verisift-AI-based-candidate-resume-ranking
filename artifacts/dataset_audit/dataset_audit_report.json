@@ -1,0 +1,77 @@
+{
+  "dataset_name": "cnamuangtoun/resume-job-description-fit",
+  "random_seed": 42,
+  "raw_accounting": {
+    "total_raw_rows": 8000,
+    "train_raw_rows": 6241,
+    "test_raw_rows": 1759,
+    "unique_resumes_raw": 643,
+    "unique_jds_raw": 351,
+    "train_nulls": {
+      "resume_text": 0,
+      "job_description_text": 0,
+      "label": 0
+    },
+    "test_nulls": {
+      "resume_text": 0,
+      "job_description_text": 0,
+      "label": 0
+    }
+  },
+  "cleaning_decisions": {
+    "exact_duplicate_pairs_removed": 1,
+    "contradictory_pairs_identified": 6,
+    "contradictory_rows_removed": 12,
+    "cleaning_rationale": "Removed 1 exact duplicate pair and 6 contradictory pairs (12 rows) where conflicting human annotators assigned different labels (e.g. Good Fit vs No Fit) to identical resume-job pairs.",
+    "total_clean_rows": 7987,
+    "unique_resumes_clean": 643,
+    "unique_jds_clean": 351,
+    "class_distribution": {
+      "No Fit": 3993,
+      "Potential Fit": 1998,
+      "Good Fit": 1996
+    },
+    "class_proportions": {
+      "No Fit": 0.4999373982721923,
+      "Potential Fit": 0.25015650431951925,
+      "Good Fit": 0.24990609740828848
+    }
+  },
+  "split_1_jd_held_out": {
+    "description": "Standard split holding out 71 job descriptions; resumes overlap between train and test.",
+    "train_rows": 6228,
+    "test_rows": 1759,
+    "train_jds": 280,
+    "test_jds": 71,
+    "jd_leakage": 0,
+    "resume_overlap_pct": 99.79
+  },
+  "split_2_resume_held_out": {
+    "description": "Strict identity-aware split holding out 128 unique resumes with zero resume leakage.",
+    "train_rows": 5759,
+    "val_rows": 761,
+    "test_rows": 1467,
+    "train_resumes": 436,
+    "val_resumes": 78,
+    "test_resumes": 129,
+    "resume_leakage": 0,
+    "test_class_distribution": {
+      "No Fit": 685,
+      "Potential Fit": 391,
+      "Good Fit": 391
+    }
+  },
+  "split_3_combined_generalization": {
+    "description": "Strict bipartite hold-out with unseen resumes AND unseen job descriptions.",
+    "train_rows": 5208,
+    "test_rows": 283,
+    "test_resumes": 93,
+    "test_jds": 60,
+    "test_class_distribution": {
+      "No Fit": 115,
+      "Good Fit": 108,
+      "Potential Fit": 60
+    },
+    "limitations": "Smaller test sample size (350 pairs) due to bipartite graph sparsity, but provides 100% zero-leakage evaluation."
+  }
+}

@@ -1,0 +1,9 @@
+Component,Trainable Parameters,Frozen Parameters,Total Parameters
+Branch 1 (Linear + LayerNorm),197376,0,197376
+Branch 2 (Linear + LayerNorm),197632,0,197632
+Fusion Head (Linear 512->256 + LN),131840,0,131840
+Projection 2 (Linear 256->64 + LN),16576,0,16576
+Output Layer (Linear 64->3),195,0,195
+Total Classifier Head,543619,0,543619
+all-MiniLM-L6-v2 Encoder,0,22713216,22713216
+Entire Matching System,543619,22713216,23256835

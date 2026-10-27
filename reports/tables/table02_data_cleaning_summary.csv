@@ -1,0 +1,6 @@
+Step,Input Rows,Output Rows,Delta,Action Description
+Raw Pool Ingestion,8000,8000,0,Merged train.csv and test.csv pools for deduplication audit
+Whitespace Normalization,8000,8000,0,"Normalized tabs, CR/LF, multiple spaces without stripping technical terms"
+Exact Pair Deduplication,8000,7987,-13,"Removed identical (r_hash, j_hash) pairs with identical labels"
+Contradiction Check,7987,7987,0,"Verified zero conflicting labels for identical (r_hash, j_hash) pairings"
+Cleaned Master Dataset,7987,7987,0,Exported to artifacts/dataset_audit/splits/verisift_cleaned_all.csv

@@ -1,0 +1,10 @@
+Parameter,Value
+Model Identifier,sentence-transformers/all-MiniLM-L6-v2
+Base Architecture,6-layer MiniLM (BERT-style Transformer)
+Hidden Size (Embedding Dimension),384 dense float32 dimensions
+Max Position Embeddings (Native),512 tokens
+Default Library Context Window,256 tokens (truncated 99.95% of resumes)
+Verisift Context Window Setting,512 tokens (extended native maximum)
+Pooling Method,Mean Pooling over attention-masked token states
+Normalization,"L2 unit normalization (p=2, dim=1)"
+Offline Mode Setting,"TRANSFORMERS_OFFLINE=1, HF_HUB_OFFLINE=1"

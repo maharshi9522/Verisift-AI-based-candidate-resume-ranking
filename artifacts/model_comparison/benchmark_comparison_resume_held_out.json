@@ -1,0 +1,158 @@
+{
+  "Pretrained MiniLM + MLP (Baseline)": {
+    "accuracy": 0.8807089297886844,
+    "macro_f1": 0.8742149868694759,
+    "weighted_f1": 0.8811232818206253,
+    "per_class_precision": [
+      0.9244712990936556,
+      0.8521303258145363,
+      0.8374384236453202
+    ],
+    "per_class_recall": [
+      0.8934306569343066,
+      0.8695652173913043,
+      0.8695652173913043
+    ],
+    "per_class_f1": [
+      0.9086859688195991,
+      0.8607594936708861,
+      0.8531994981179423
+    ],
+    "confusion_matrix": [
+      [
+        612,
+        33,
+        40
+      ],
+      [
+        25,
+        340,
+        26
+      ],
+      [
+        25,
+        26,
+        340
+      ]
+    ],
+    "ranking": {
+      "evaluated_jobs": 199,
+      "ndcg5_mean": 0.952593272183845,
+      "ndcg5_std": 0.14160331377668423,
+      "ndcg10_mean": 0.9626575858070685,
+      "ndcg10_std": 0.11613908795843483,
+      "precision5_mean": 0.7285594639865998,
+      "recall5_mean": 0.901363335157305,
+      "pairwise_concordance": 0.9154121863799283,
+      "concordant_pairs": 2554,
+      "discordant_pairs": 236,
+      "tied_pairs": 0,
+      "total_pairs": 2790
+    },
+    "latency_sec": 21.52248239517212
+  },
+  "Fine-Tuned SBERT Dual-Encoder": {
+    "accuracy": 0.48807089297886846,
+    "macro_f1": 0.40850217999230837,
+    "weighted_f1": 0.45017926862879226,
+    "per_class_precision": [
+      0.5136186770428015,
+      0.4484848484848485,
+      0.41605839416058393
+    ],
+    "per_class_recall": [
+      0.7708029197080292,
+      0.18925831202046037,
+      0.2915601023017903
+    ],
+    "per_class_f1": [
+      0.6164623467600701,
+      0.26618705035971224,
+      0.34285714285714286
+    ],
+    "confusion_matrix": [
+      [
+        528,
+        58,
+        99
+      ],
+      [
+        256,
+        74,
+        61
+      ],
+      [
+        244,
+        33,
+        114
+      ]
+    ],
+    "ranking": {
+      "evaluated_jobs": 199,
+      "ndcg5_mean": 0.787622667015743,
+      "ndcg5_std": 0.23090855470699811,
+      "ndcg10_mean": 0.8311236914957351,
+      "ndcg10_std": 0.18610871859253028,
+      "precision5_mean": 0.6421273031825796,
+      "recall5_mean": 0.8230394256776167,
+      "pairwise_concordance": 0.5376344086021505,
+      "concordant_pairs": 1500,
+      "discordant_pairs": 1290,
+      "tied_pairs": 0,
+      "total_pairs": 2790
+    },
+    "latency_sec": 26.510013580322266
+  },
+  "Final Explainable Ranking System": {
+    "accuracy": 0.44648943421949555,
+    "macro_f1": 0.262205171923842,
+    "weighted_f1": 0.33390022379243034,
+    "per_class_precision": [
+      0.47716535433070867,
+      0.24873096446700507,
+      0.0
+    ],
+    "per_class_recall": [
+      0.8846715328467153,
+      0.12531969309462915,
+      0.0
+    ],
+    "per_class_f1": [
+      0.6199488491048594,
+      0.16666666666666666,
+      0.0
+    ],
+    "confusion_matrix": [
+      [
+        606,
+        79,
+        0
+      ],
+      [
+        342,
+        49,
+        0
+      ],
+      [
+        322,
+        69,
+        0
+      ]
+    ],
+    "ranking": {
+      "evaluated_jobs": 199,
+      "ndcg5_mean": 0.7596483583156102,
+      "ndcg5_std": 0.27023733131799443,
+      "ndcg10_mean": 0.8254064753428325,
+      "ndcg10_std": 0.19769506645021856,
+      "precision5_mean": 0.6079564489112228,
+      "recall5_mean": 0.7985783200607321,
+      "pairwise_concordance": 0.4806451612903226,
+      "concordant_pairs": 1341,
+      "discordant_pairs": 1445,
+      "tied_pairs": 4,
+      "total_pairs": 2790
+    },
+    "latency_sec": 22.379458904266357
+  }
+}

@@ -1,0 +1,3 @@
+Evaluation Protocol,Evaluated Jobs,Candidate Pairs,nDCG@5,nDCG@10,Pairwise Concordance,Status
+Held-Out Pair Split (Candidates on known roles),267,799,0.9654,0.9705,88.49%,Target Milestone Achieved
+Strict Unseen Job Split (Zero-shot unseen roles),71,1759,0.7148,0.7458,69.46%,Exceeds Prior Baseline (68.10%)

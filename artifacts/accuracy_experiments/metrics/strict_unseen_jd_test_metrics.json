@@ -1,0 +1,46 @@
+{
+  "accuracy": 0.5446,
+  "macro_f1": 0.496,
+  "weighted_f1": 0.5355,
+  "per_class": {
+    "No Fit": {
+      "precision": 0.6225,
+      "recall": 0.7176,
+      "f1": 0.6667
+    },
+    "Potential Fit": {
+      "precision": 0.3996,
+      "recall": 0.4032,
+      "f1": 0.4013
+    },
+    "Good Fit": {
+      "precision": 0.5077,
+      "recall": 0.3581,
+      "f1": 0.42
+    }
+  },
+  "confusion_matrix": [
+    [
+      615,
+      163,
+      79
+    ],
+    [
+      185,
+      179,
+      80
+    ],
+    [
+      188,
+      106,
+      164
+    ]
+  ],
+  "ranking": {
+    "ndcg@5": 0.7148,
+    "ndcg@10": 0.7458,
+    "pairwise_concordance": 0.6946,
+    "evaluated_jobs": 71,
+    "total_evaluated_pairs": 18726
+  }
+}

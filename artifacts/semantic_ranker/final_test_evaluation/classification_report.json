@@ -1,0 +1,101 @@
+{
+  "Stage 4C TF-IDF Baseline": {
+    "No Fit": {
+      "precision": 0.6317733990147784,
+      "recall": 0.5985997666277713,
+      "f1-score": 0.6147393648891551,
+      "support": 857.0
+    },
+    "Potential Fit": {
+      "precision": 0.34345047923322686,
+      "recall": 0.48423423423423423,
+      "f1-score": 0.40186915887850466,
+      "support": 444.0
+    },
+    "Good Fit": {
+      "precision": 0.4454828660436137,
+      "recall": 0.31222707423580787,
+      "f1-score": 0.36713735558408217,
+      "support": 458.0
+    },
+    "accuracy": 0.49516770892552586,
+    "macro avg": {
+      "precision": 0.4735689147638729,
+      "recall": 0.4650203583659378,
+      "f1-score": 0.4612486264505807,
+      "support": 1759.0
+    },
+    "weighted avg": {
+      "precision": 0.5104906016959596,
+      "recall": 0.49516770892552586,
+      "f1-score": 0.49653806202931866,
+      "support": 1759.0
+    }
+  },
+  "E4 Rich Pairwise LogReg": {
+    "No Fit": {
+      "precision": 0.6728571428571428,
+      "recall": 0.5495915985997666,
+      "f1-score": 0.605009633911368,
+      "support": 857.0
+    },
+    "Potential Fit": {
+      "precision": 0.3473344103392569,
+      "recall": 0.48423423423423423,
+      "f1-score": 0.4045155221072437,
+      "support": 444.0
+    },
+    "Good Fit": {
+      "precision": 0.42727272727272725,
+      "recall": 0.4104803493449782,
+      "f1-score": 0.41870824053452116,
+      "support": 458.0
+    },
+    "accuracy": 0.4968732234223991,
+    "macro avg": {
+      "precision": 0.48248809348970895,
+      "recall": 0.4814353940596597,
+      "f1-score": 0.47607779885104423,
+      "support": 1759.0
+    },
+    "weighted avg": {
+      "precision": 0.5267458548664642,
+      "recall": 0.4968732234223991,
+      "f1-score": 0.5058934179888966,
+      "support": 1759.0
+    }
+  },
+  "E4 PyTorch Pairwise MLP": {
+    "No Fit": {
+      "precision": 0.6439482961222092,
+      "recall": 0.6394399066511085,
+      "f1-score": 0.6416861826697893,
+      "support": 857.0
+    },
+    "Potential Fit": {
+      "precision": 0.38671875,
+      "recall": 0.44594594594594594,
+      "f1-score": 0.41422594142259417,
+      "support": 444.0
+    },
+    "Good Fit": {
+      "precision": 0.42676767676767674,
+      "recall": 0.36899563318777295,
+      "f1-score": 0.3957845433255269,
+      "support": 458.0
+    },
+    "accuracy": 0.5201819215463331,
+    "macro avg": {
+      "precision": 0.48581157429662863,
+      "recall": 0.4847938285949424,
+      "f1-score": 0.48389888913930346,
+      "support": 1759.0
+    },
+    "weighted avg": {
+      "precision": 0.522470955506725,
+      "recall": 0.5201819215463331,
+      "f1-score": 0.5202448535433385,
+      "support": 1759.0
+    }
+  }
+}

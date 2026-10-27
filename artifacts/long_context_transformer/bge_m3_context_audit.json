@@ -1,0 +1,65 @@
+{
+  "project": "Verisift",
+  "stage": "5B",
+  "timestamp": "2026-10-26T15:20:00Z",
+  "encoder_evaluated": "BAAI/bge-m3",
+  "baseline_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "dataset_stats": {
+    "train_rows_clean": 6228,
+    "test_rows": 1759,
+    "unique_train_resumes": 642,
+    "unique_train_jobs": 280,
+    "unique_test_resumes": 477,
+    "unique_test_jobs": 70
+  },
+  "token_length_distribution": {
+    "resumes": {
+      "min": 239,
+      "q25": 820.0,
+      "median": 1204.0,
+      "q75": 1712.0,
+      "p90": 2137.8,
+      "p95": 2772.0,
+      "max": 5448
+    },
+    "job_descriptions": {
+      "min": 19,
+      "q25": 312.0,
+      "median": 498.0,
+      "q75": 780.0,
+      "p90": 1056.0,
+      "p95": 1260.0,
+      "max": 1574
+    }
+  },
+  "coverage_comparison": {
+    "MiniLM_256": {
+      "context_window": 256,
+      "resume_coverage_pct": 0.05,
+      "resume_truncated_pct": 99.95,
+      "resume_tokens_retained_pct": 18.95,
+      "jd_coverage_pct": 22.06,
+      "jd_truncated_pct": 77.94,
+      "jd_tokens_retained_pct": 40.24
+    },
+    "BGE_M3_8192": {
+      "context_window": 8192,
+      "resume_coverage_pct": 100.0,
+      "resume_truncated_pct": 0.0,
+      "resume_tokens_retained_pct": 100.0,
+      "jd_coverage_pct": 100.0,
+      "jd_truncated_pct": 0.0,
+      "jd_tokens_retained_pct": 100.0
+    }
+  },
+  "computational_profile": {
+    "hardware": "Intel Core Ultra 5 125H (14 cores), 16 GB RAM, CPU-only",
+    "bge_m3_parameters": "567M (1024-dim dense embedding)",
+    "minilm_parameters": "22M (384-dim dense embedding)",
+    "bge_m3_cpu_latency_per_doc": "2.42s to 15.0s depending on token count",
+    "bge_m3_full_dataset_est_time": "11.2 hours (40 unique JDs took ~33.5 mins)",
+    "minilm_cpu_latency_per_doc": "0.08s to 0.12s",
+    "minilm_realtime_ranking_latency_10_resumes": "0.04s inference, <1.2s total",
+    "decision": "BGE-M3 time-boxing triggered at Checkpoint C. Retain MiniLM Pairwise MLP as real-time production engine; retain BGE-M3 as an offline/batch long-context encoder."
+  }
+}

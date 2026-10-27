@@ -1,0 +1,10 @@
+Field,Value
+Dataset Name,cnamuangtoun/resume-job-description-fit
+Source Repository,Hugging Face Datasets Hub
+Raw Records Count,"8,000 rows (6,241 train + 1,759 test)"
+Cleaned Records Count,"7,987 rows (13 duplicate/inconsistent removed)"
+Unique Candidate Resumes,643 unique documents
+Unique Job Descriptions,351 unique requisitions
+Raw Schema Columns,"resume_text (string), job_description_text (string), label (string)"
+Engineered Hash Columns,"r_hash (SHA-256 of normalized resume), j_hash (SHA-256 of normalized JD)"
+Target Classes,"No Fit (0), Potential Fit (1), Good Fit (2)"

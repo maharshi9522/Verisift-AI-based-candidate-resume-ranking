@@ -1,0 +1,59 @@
+{
+  "evaluation_protocol": "Per-job ranking evaluation on test.csv across 61 jobs with positive candidates",
+  "job_accounting": {
+    "total_test_jobs": 71,
+    "evaluated_jobs": 61,
+    "zero_positive_excluded": 10,
+    "insufficient_candidates_excluded": 0
+  },
+  "models": [
+    {
+      "model": "Stage 4C TF-IDF Baseline",
+      "jobs_total": 71,
+      "jobs_evaluated": 61,
+      "jobs_zero_positive_excluded": 10,
+      "jobs_insufficient_candidates_excluded": 0,
+      "ndcg5_mean": 0.6526717289427165,
+      "ndcg5_std": 0.3027732776998825,
+      "ndcg10_mean": 0.7033938830569457,
+      "ndcg10_std": 0.24220334962872464,
+      "pairwise_concordance": 0.6835950016020507,
+      "concordant_pairs": 12801,
+      "discordant_pairs": 5925,
+      "tied_pairs": 0,
+      "total_evaluated_pairs": 18726
+    },
+    {
+      "model": "E4 Rich Pairwise LogReg",
+      "jobs_total": 71,
+      "jobs_evaluated": 61,
+      "jobs_zero_positive_excluded": 10,
+      "jobs_insufficient_candidates_excluded": 0,
+      "ndcg5_mean": 0.7239430143996467,
+      "ndcg5_std": 0.2787530906091603,
+      "ndcg10_mean": 0.7433865709732947,
+      "ndcg10_std": 0.21131055488453027,
+      "pairwise_concordance": 0.7078393677240201,
+      "concordant_pairs": 13255,
+      "discordant_pairs": 5469,
+      "tied_pairs": 2,
+      "total_evaluated_pairs": 18726
+    },
+    {
+      "model": "E4 PyTorch Pairwise MLP",
+      "jobs_total": 71,
+      "jobs_evaluated": 61,
+      "jobs_zero_positive_excluded": 10,
+      "jobs_insufficient_candidates_excluded": 0,
+      "ndcg5_mean": 0.7267526947848251,
+      "ndcg5_std": 0.2637209488792207,
+      "ndcg10_mean": 0.7465236655769159,
+      "ndcg10_std": 0.2200616811921179,
+      "pairwise_concordance": 0.7194809355975649,
+      "concordant_pairs": 13473,
+      "discordant_pairs": 5251,
+      "tied_pairs": 2,
+      "total_evaluated_pairs": 18726
+    }
+  ]
+}

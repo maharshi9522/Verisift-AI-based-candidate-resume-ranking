@@ -1,0 +1,41 @@
+{
+  "evaluation_protocol": "Out-of-fold per-job ranking evaluation on 243 jobs with positive candidates",
+  "models": [
+    {
+      "model": "Stage 4C TF-IDF Baseline",
+      "ndcg@5_mean": 0.6452874623600149,
+      "ndcg@5_std": 0.3259297043925375,
+      "ndcg@10_mean": 0.6998258074526957,
+      "ndcg@10_std": 0.2515421169917274,
+      "pairwise_acc": 0.67262749063592,
+      "evaluated_jobs": 243
+    },
+    {
+      "model": "E3: Concat LogReg (768d)",
+      "ndcg@5_mean": 0.584629362637013,
+      "ndcg@5_std": 0.33138549212729346,
+      "ndcg@10_mean": 0.6561307350424367,
+      "ndcg@10_std": 0.26014213372458067,
+      "pairwise_acc": 0.6454491619720499,
+      "evaluated_jobs": 243
+    },
+    {
+      "model": "E4: Rich Pairwise LogReg (1536d)",
+      "ndcg@5_mean": 0.7137238160843873,
+      "ndcg@5_std": 0.2879237505836974,
+      "ndcg@10_mean": 0.746508563133205,
+      "ndcg@10_std": 0.2288470291771137,
+      "pairwise_acc": 0.7245098675094876,
+      "evaluated_jobs": 243
+    },
+    {
+      "model": "E4: PyTorch MLP (1536d)",
+      "ndcg@5_mean": 0.7258427107955044,
+      "ndcg@5_std": 0.2828083881076165,
+      "ndcg@10_mean": 0.7489865850709146,
+      "ndcg@10_std": 0.22748512433579646,
+      "pairwise_acc": 0.7440273514846829,
+      "evaluated_jobs": 243
+    }
+  ]
+}

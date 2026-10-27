@@ -1,0 +1,58 @@
+{
+  "project": "Verisift",
+  "stage": "5B",
+  "timestamp": "2026-10-26T15:25:00Z",
+  "evaluation_protocol": "Disjoint 5-Fold GroupKFold by Job Description + Held-out Test Set Evaluation",
+  "models": {
+    "TF-IDF Baseline (Stage 4C)": {
+      "held_out_accuracy": 0.4952,
+      "held_out_macro_f1": 0.4612,
+      "held_out_weighted_f1": 0.4965,
+      "held_out_ndcg5": 0.6527,
+      "held_out_ndcg10": 0.6814,
+      "pairwise_concordance": 0.6385,
+      "inference_time_sec": 6.407
+    },
+    "MiniLM E4 Rich Pairwise LogReg (Stage 4D)": {
+      "held_out_accuracy": 0.4969,
+      "held_out_macro_f1": 0.4761,
+      "held_out_weighted_f1": 0.5059,
+      "held_out_ndcg5": 0.7239,
+      "held_out_ndcg10": 0.7485,
+      "pairwise_concordance": 0.7162,
+      "inference_time_sec": 0.031
+    },
+    "MiniLM E4 PyTorch Pairwise MLP (Selected Production Engine)": {
+      "held_out_accuracy": 0.5202,
+      "held_out_macro_f1": 0.4839,
+      "held_out_weighted_f1": 0.5202,
+      "held_out_ndcg5": 0.7268,
+      "held_out_ndcg10": 0.7512,
+      "pairwise_concordance": 0.7195,
+      "inference_time_sec": 0.041,
+      "per_class_metrics": {
+        "No Fit": {
+          "precision": 0.6439,
+          "recall": 0.6394,
+          "f1": 0.6417
+        },
+        "Potential Fit": {
+          "precision": 0.3867,
+          "recall": 0.4459,
+          "f1": 0.4142
+        },
+        "Good Fit": {
+          "precision": 0.4268,
+          "recall": 0.369,
+          "f1": 0.3958
+        }
+      }
+    },
+    "BGE-M3 Pairwise Head (Long-Context Benchmark)": {
+      "status": "Time-boxed at Checkpoint C due to CPU latency constraint",
+      "context_window": 8192,
+      "token_coverage": 1.0,
+      "feasibility_assessment": "Computationally prohibitive for single-day local CPU training and synchronous web inference (11+ hours caching; 15-40s per job triage). Architecturally documented and staged for GPU/offline execution."
+    }
+  }
+}

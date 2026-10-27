@@ -1,0 +1,31 @@
+{
+  "test_dataset_hash": "f3c48f4cc3559bf192ebb9c241a30c601b5b8b3eee6f1656dd4d26dfd4b0887a",
+  "total_test_rows": 1759,
+  "classes": {
+    "No Fit": {
+      "count": 857,
+      "pct": 48.72086412734508,
+      "id": 0
+    },
+    "Potential Fit": {
+      "count": 444,
+      "pct": 25.241614553723707,
+      "id": 1
+    },
+    "Good Fit": {
+      "count": 458,
+      "pct": 26.037521318931212,
+      "id": 2
+    }
+  },
+  "structure_analysis": {
+    "unique_test_resumes": 477,
+    "unique_test_jobs": 71,
+    "overlapping_resumes_with_train": 476,
+    "pct_resumes_overlapping": 99.79035639412997,
+    "overlapping_jobs_with_train": 0,
+    "pct_jobs_overlapping": 0.0,
+    "exact_pair_overlap": 0
+  },
+  "generalization_scope": "Zero job descriptions in test.csv appear in train.csv (71 completely unseen jobs). Zero exact resume-job pairs overlap. However, 476 of 477 unique resumes (99.79%) occur in training. This evaluation strictly establishes generalization to unseen job descriptions within a known applicant population; it does NOT establish generalization to completely unseen candidate resumes."
+}

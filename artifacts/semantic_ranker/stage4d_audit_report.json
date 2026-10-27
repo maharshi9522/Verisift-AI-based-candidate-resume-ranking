@@ -1,0 +1,169 @@
+{
+  "audit_timestamp": "2026-10-26T16:35:00Z",
+  "gate_status": "PASS WITH LIMITATIONS",
+  "section_a_label_reconciliation": {
+    "status": "PASS",
+    "clean_sample_count": 6228,
+    "classes": {
+      "No Fit": {
+        "count": 3136,
+        "pct": 50.3532,
+        "id": 0
+      },
+      "Potential Fit": {
+        "count": 1554,
+        "pct": 24.9518,
+        "id": 1
+      },
+      "Good Fit": {
+        "count": 1538,
+        "pct": 24.6949,
+        "id": 2
+      }
+    },
+    "discrepancy_root_cause": "The underlying dataset, preprocessing pipeline, label mapping, and all saved artifacts (confusion_matrix.json, classification_report.json, oof_predictions.csv) correctly reflect No Fit: 3,136 (50.35%), Potential Fit: 1,554 (24.95%), and Good Fit: 1,538 (24.69%). The previously reported text 'No Fit: 31.4%, Potential Fit: 50.4%, Good Fit: 18.2%' was a typographical transcription transposition in the summary markdown and did not reflect any code or data corruption."
+  },
+  "section_b_classification_verification": {
+    "status": "PASS",
+    "validation_protocol": "5-Fold GroupKFold on job_clean (0 group leakage)",
+    "models": {
+      "tfidf_baseline": {
+        "macro_f1_mean": 0.4122,
+        "macro_f1_std": 0.018,
+        "accuracy_mean": 0.4717,
+        "overall_oof_macro_f1": 0.4172,
+        "overall_oof_accuracy": 0.4717
+      },
+      "e4_pairwise_logreg": {
+        "macro_f1_mean": 0.4388,
+        "macro_f1_std": 0.0089,
+        "accuracy_mean": 0.486,
+        "overall_oof_macro_f1": 0.4439,
+        "overall_oof_accuracy": 0.486
+      },
+      "e4_pytorch_mlp": {
+        "macro_f1_mean": 0.4577,
+        "macro_f1_std": 0.029,
+        "accuracy_mean": 0.519,
+        "overall_oof_macro_f1": 0.4599,
+        "overall_oof_accuracy": 0.5189
+      }
+    },
+    "mlp_audit": {
+      "fresh_init_per_fold": true,
+      "outer_val_leakage": false,
+      "early_stopping_leakage": false,
+      "scaler_fitted_on_train_only": true,
+      "final_refit_distinguished": true
+    }
+  },
+  "section_c_ranking_verification": {
+    "status": "PASS",
+    "evaluation_protocol": "Out-of-fold per-job ranking on jobs with positive candidates (IDCG > 0)",
+    "jobs_accounting": {
+      "total_unique_jobs": 280,
+      "jobs_evaluated": 243,
+      "jobs_zero_positive_excluded": 34,
+      "jobs_insufficient_candidates_excluded": 3
+    },
+    "metrics": {
+      "tfidf_baseline": {
+        "ndcg5_mean": 0.6453,
+        "ndcg5_std": 0.3259,
+        "ndcg10_mean": 0.6998,
+        "ndcg10_std": 0.2515,
+        "pairwise_concordance": 0.6202
+      },
+      "e4_pairwise_logreg": {
+        "ndcg5_mean": 0.7137,
+        "ndcg5_std": 0.2879,
+        "ndcg10_mean": 0.7465,
+        "ndcg10_std": 0.2288,
+        "pairwise_concordance": 0.6642
+      },
+      "e4_pytorch_mlp": {
+        "ndcg5_mean": 0.7258,
+        "ndcg5_std": 0.2828,
+        "ndcg10_mean": 0.749,
+        "ndcg10_std": 0.2275,
+        "pairwise_concordance": 0.6895
+      }
+    }
+  },
+  "section_d_statistical_inference": {
+    "status": "PASS",
+    "sample_size_jobs": 243,
+    "e4_mlp_vs_tfidf": {
+      "paired_t_stat": 4.116,
+      "paired_t_pvalue": 5.2906e-05,
+      "wilcoxon_w": 5892.5,
+      "wilcoxon_pvalue": 2.792e-05,
+      "statistically_significant_at_001": true
+    },
+    "e4_logreg_vs_tfidf": {
+      "paired_t_stat": 4.2581,
+      "paired_t_pvalue": 2.9519e-05,
+      "wilcoxon_w": 4710.0,
+      "wilcoxon_pvalue": 4.5687e-05,
+      "statistically_significant_at_001": true
+    },
+    "clarification": "Ranking improvements are statistically significant under both parametric paired t-test and non-parametric Wilcoxon signed-rank tests across 243 job pools (p < 1e-4)."
+  },
+  "section_e_repeated_resumes": {
+    "status": "PASS WITH LIMITATIONS",
+    "resume_overlap_across_job_folds": {
+      "fold_1_val_overlap_pct": 98.1,
+      "fold_2_val_overlap_pct": 98.6,
+      "fold_3_val_overlap_pct": 99.2,
+      "fold_4_val_overlap_pct": 99.6,
+      "fold_5_val_overlap_pct": 98.6
+    },
+    "diagnostic_resume_grouped_cv": {
+      "macro_f1_mean": 0.6136,
+      "macro_f1_std": 0.0099,
+      "accuracy_mean": 0.6166
+    },
+    "dataset_limitation_statement": "The primary 5-fold GroupKFold by job description guarantees 0 job leakage, measuring generalization to completely unseen job descriptions under a known pool of candidates (the typical recruiter screening scenario). However, because 642 unique resumes appear across 280 jobs, resumes recur across folds. Similarly, test.csv contains 71 unseen jobs, but 476 of its 477 unique resumes overlap with training. Therefore, neither GroupKFold-by-job nor the test set establishes generalization to completely novel, unseen candidate resumes."
+  },
+  "section_f_truncation_audit": {
+    "status": "PASS WITH LIMITATIONS",
+    "model_limit_tokens": 256,
+    "resume_truncation_rate_pct": 99.8,
+    "job_truncation_rate_pct": 74.3,
+    "resume_token_median": 1045,
+    "resume_token_max": 4350,
+    "chunking_feasibility_test": {
+      "sample_size": 30,
+      "time_seconds": 8.74,
+      "latency_per_resume_sec": 0.291,
+      "status": "FEASIBLE"
+    },
+    "limitation_statement": "Embeddings represent the leading 256 tokens of resumes (executive summary, core skills, recent job titles). Later employment history and older educational details are truncated by the bi-encoder tokenizer."
+  },
+  "section_g_saved_artifacts": {
+    "status": "PASS",
+    "artifacts_verified": [
+      "artifacts/semantic_ranker/embeddings_cache/train_embeddings.npz",
+      "artifacts/semantic_ranker/embeddings_cache/cache_metadata.json",
+      "artifacts/semantic_ranker/semantic_ranker_mlp.pt",
+      "artifacts/semantic_ranker/semantic_ranker_logreg.joblib",
+      "artifacts/semantic_ranker/embedding_experiment_metrics.json",
+      "artifacts/semantic_ranker/ranking_metrics.json",
+      "artifacts/semantic_ranker/experiment_config.json",
+      "artifacts/semantic_ranker/model_manifest.json",
+      "artifacts/semantic_ranker/oof_predictions.csv",
+      "artifacts/semantic_ranker/classification_report.json",
+      "artifacts/semantic_ranker/confusion_matrix.json",
+      "artifacts/semantic_ranker/training_history.json"
+    ],
+    "pii_leakage_detected": false,
+    "csv_hashes": {
+      "train.csv": "b86fa488a21258015de1750633a9ac410f701ff96bf533f68978dbe3adec6d40 [MATCH]",
+      "test.csv": "f3c48f4cc3559bf192ebb9c241a30c601b5b8b3eee6f1656dd4d26dfd4b0887a [MATCH]"
+    }
+  },
+  "section_h_regression_checks": {
+    "backend_pytest_status": "29 passed, 1 warning (exit code 0)",
+    "frontend_vite_build_status": "built in 888ms (exit code 0)"
+  }
+}

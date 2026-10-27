@@ -1,0 +1,42 @@
+{
+  "Baseline_Pairwise_MLP": {
+    "accuracy": 0.534963047185901,
+    "macro_f1": 0.4971585764122784,
+    "weighted_f1": 0.5339377571563391,
+    "per_class_f1": [
+      0.656629994209612,
+      0.42105263157894735,
+      0.41379310344827586
+    ],
+    "ranking": {
+      "jobs_evaluated": 61,
+      "ndcg5_mean": 0.7287256748016114,
+      "ndcg5_std": 0.2557785829036955,
+      "ndcg10_mean": 0.7611528742909562,
+      "ndcg10_std": 0.20437976210666597,
+      "pairwise_concordance": 0.7402007903449749,
+      "total_pairs": 18726
+    },
+    "inference_latency_ms": 0.006368988410121274
+  },
+  "Section_Aware_Pairwise_MLP": {
+    "accuracy": 0.5014212620807277,
+    "macro_f1": 0.42565874391604197,
+    "weighted_f1": 0.47289069882362944,
+    "per_class_f1": [
+      0.6281800391389433,
+      0.2631578947368421,
+      0.38563829787234044
+    ],
+    "ranking": {
+      "jobs_evaluated": 61,
+      "ndcg5_mean": 0.5925750806866293,
+      "ndcg5_std": 0.3124462542798899,
+      "ndcg10_mean": 0.6351325557919121,
+      "ndcg10_std": 0.23267222284160588,
+      "pairwise_concordance": 0.5681939549289757,
+      "total_pairs": 18726
+    },
+    "inference_latency_ms": 0.006215012568245563
+  }
+}

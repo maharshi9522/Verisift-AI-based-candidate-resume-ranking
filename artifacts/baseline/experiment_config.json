@@ -1,0 +1,25 @@
+{
+  "stage": "4C",
+  "random_seed": 42,
+  "pipeline_architecture": "sklearn.pipeline.Pipeline (leakage-proof cross-validation)",
+  "primary_vectorizer": {
+    "type": "TfidfVectorizer",
+    "max_features": 15000,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "sublinear_tf": true,
+    "min_df": 2
+  },
+  "classifier": {
+    "type": "LogisticRegression",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
+  "train_samples_fitted": 6228,
+  "dropped_exact_duplicates": 1,
+  "dropped_conflicting_pairs": 12
+}

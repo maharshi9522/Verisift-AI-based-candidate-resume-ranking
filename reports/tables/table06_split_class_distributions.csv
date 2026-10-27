@@ -1,0 +1,4 @@
+Split,No Fit Count,No Fit %,Potential Fit Count,Potential Fit %,Good Fit Count,Good Fit %,Total Rows
+Train,3194,49.99,1598,25.01,1597,25.0,6389
+Validation,400,50.06,200,25.03,199,24.91,799
+Held-Out Test,399,49.94,200,25.03,200,25.03,799

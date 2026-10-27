@@ -1,0 +1,27 @@
+{
+  "stage": "4D",
+  "primary_model_mlp": {
+    "macro_f1_mean": 0.45766831568174043,
+    "macro_f1_std": 0.02897426971570379,
+    "weighted_f1_mean": 0.5162566189898249,
+    "weighted_f1_std": 0.02480689999568197,
+    "accuracy_mean": 0.5189553075866871,
+    "accuracy_std": 0.028482692477335335
+  },
+  "secondary_model_logreg": {
+    "macro_f1_mean": 0.4387880420795657,
+    "macro_f1_std": 0.008947071539541903,
+    "weighted_f1_mean": 0.49051325210847374,
+    "weighted_f1_std": 0.01878666570309993,
+    "accuracy_mean": 0.4860287377439131,
+    "accuracy_std": 0.02597327314313038
+  },
+  "baseline_tfidf": {
+    "macro_f1_mean": 0.4122315096691346,
+    "macro_f1_std": 0.018022234072570063,
+    "weighted_f1_mean": 0.466383080514266,
+    "weighted_f1_std": 0.024008249832887046,
+    "accuracy_mean": 0.47173967136604206,
+    "accuracy_std": 0.03252807646909527
+  }
+}

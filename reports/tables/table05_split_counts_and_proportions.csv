@@ -1,0 +1,5 @@
+Split Name,CSV File,Rows,Percentage,Unique Resumes,Unique JDs,Pair Overlap with Test
+Train Split,pair_held_out_train.csv,6389,79.99%,639,350,0
+Validation Split,pair_held_out_val.csv,799,10.00%,347,273,0
+Held-Out Test Split,pair_held_out_test.csv,799,10.00%,365,267,0
+Total,verisift_cleaned_all.csv,7987,100.00%,643,351,0

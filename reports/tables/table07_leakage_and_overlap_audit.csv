@@ -1,0 +1,9 @@
+Split Comparison,Overlap Count,Status
+Pair Split: Train vs Val (Pairs),0,Verified Zero Overlap
+Pair Split: Train vs Test (Pairs),0,Verified Zero Overlap
+Pair Split: Val vs Test (Pairs),0,Verified Zero Overlap
+Pair Split: Train vs Test (Resumes),363,Permitted in Pair Split (639 Train / 365 Test)
+Pair Split: Train vs Test (JDs),266,Permitted in Pair Split (350 Train / 267 Test)
+Strict Unseen JD: Train vs Test (JDs),0,Verified Zero JD Overlap (280 Train / 71 Test)
+Strict Unseen JD: Train vs Test (Pairs),0,Verified Zero Pair Overlap
+Cross-Split Leakage: pair_train vs jd_test (Pairs),1385,78.74% Contamination (Explains Illusory 95.79%)

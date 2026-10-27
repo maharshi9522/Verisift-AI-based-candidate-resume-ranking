@@ -1,0 +1,62 @@
+{
+  "split_protocol": "stratified_random_pair_held_out",
+  "description": "Stratified random split where distinct resume-job pairing interactions are held out.",
+  "random_seed": 42,
+  "total_pairs": 7987,
+  "splits": {
+    "train": {
+      "rows": 6389,
+      "ratio": 0.7999,
+      "unique_resumes": 639,
+      "unique_jds": 350,
+      "class_distribution": {
+        "No Fit": 3194,
+        "Potential Fit": 1598,
+        "Good Fit": 1597
+      },
+      "class_proportions": {
+        "No Fit": 0.4999,
+        "Potential Fit": 0.2501,
+        "Good Fit": 0.25
+      }
+    },
+    "val": {
+      "rows": 799,
+      "ratio": 0.1,
+      "unique_resumes": 347,
+      "unique_jds": 273,
+      "class_distribution": {
+        "No Fit": 400,
+        "Potential Fit": 200,
+        "Good Fit": 199
+      },
+      "class_proportions": {
+        "No Fit": 0.5006,
+        "Potential Fit": 0.2503,
+        "Good Fit": 0.2491
+      }
+    },
+    "test": {
+      "rows": 799,
+      "ratio": 0.1,
+      "unique_resumes": 365,
+      "unique_jds": 267,
+      "class_distribution": {
+        "No Fit": 399,
+        "Potential Fit": 200,
+        "Good Fit": 200
+      },
+      "class_proportions": {
+        "No Fit": 0.4994,
+        "Potential Fit": 0.2503,
+        "Good Fit": 0.2503
+      }
+    }
+  },
+  "leakage_verification": {
+    "pair_overlap_train_val": 0,
+    "pair_overlap_train_test": 0,
+    "pair_overlap_val_test": 0,
+    "status": "ZERO_PAIR_OVERLAP_CONFIRMED"
+  }
+}

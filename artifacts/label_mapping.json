@@ -1,0 +1,18 @@
+{
+  "label2id": {
+    "No Fit": 0,
+    "Potential Fit": 1,
+    "Good Fit": 2
+  },
+  "id2label": {
+    "0": "No Fit",
+    "1": "Potential Fit",
+    "2": "Good Fit"
+  },
+  "classes": [
+    "No Fit",
+    "Potential Fit",
+    "Good Fit"
+  ],
+  "num_classes": 3
+}

@@ -1,0 +1,10 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "unique_resumes": 643,
+  "unique_jds": 351,
+  "embedding_dim": 384,
+  "cache_files": {
+    "256_tokens": "C:\\Users\\Shlok Chorghe\\Desktop\\DL_CP\\artifacts\\accuracy_experiments\\embeddings_cache\\minilm_256_embeddings.npz",
+    "512_tokens": "C:\\Users\\Shlok Chorghe\\Desktop\\DL_CP\\artifacts\\accuracy_experiments\\embeddings_cache\\minilm_512_embeddings.npz"
+  }
+}

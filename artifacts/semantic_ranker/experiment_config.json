@@ -1,0 +1,19 @@
+{
+  "stage": "4D",
+  "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "max_sequence_length": 256,
+  "device": "cpu",
+  "random_seed": 42,
+  "feature_representation": "E4_Rich_Pairwise: [R, J, |R-J|, R*J]",
+  "feature_dimension": 1536,
+  "validation_protocol": "5-Fold GroupKFold grouped by job_clean",
+  "clean_training_samples": 6228,
+  "unique_resumes": 642,
+  "unique_jobs": 280,
+  "dropped_exact_duplicates": 1,
+  "dropped_conflicting_rows": 12,
+  "relevance_score_formula": "100 * (0.0 * P(No Fit) + 0.5 * P(Potential Fit) + 1.0 * P(Good Fit))",
+  "primary_selected_model": "PairwiseMLP (Linear 1536->256->64->3, BatchNorm, Dropout)",
+  "secondary_selected_model": "LogisticRegression (balanced, C=1.0)"
+}

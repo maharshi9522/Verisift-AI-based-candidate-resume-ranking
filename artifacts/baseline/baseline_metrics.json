@@ -1,0 +1,45 @@
+{
+  "stage": "4C",
+  "selection_rule": "Dual-Candidate Retention: Primary Pair-Aware Model (Combined Text) and Ablation Model (Resume Only)",
+  "validation_protocol": "5-Fold GroupKFold on job_description_text",
+  "primary_model": {
+    "name": "TF-IDF (Combined Text) + Logistic Regression",
+    "macro_f1_mean": 0.4122315096691346,
+    "macro_f1_std": 0.018022234072570063,
+    "weighted_f1_mean": 0.466383080514266,
+    "weighted_f1_std": 0.024008249832887046,
+    "accuracy_mean": 0.47173967136604206,
+    "accuracy_std": 0.03252807646909527
+  },
+  "ablation_model": {
+    "name": "TF-IDF (Resume Only) + Logistic Regression",
+    "macro_f1_mean": 0.41661741621581266,
+    "macro_f1_std": 0.01748957223605471,
+    "weighted_f1_mean": 0.4506595117661121,
+    "weighted_f1_std": 0.011309056600893673,
+    "accuracy_mean": 0.43609790687630146,
+    "accuracy_std": 0.014121051344048076
+  },
+  "benchmark_comparison": {
+    "majority_class": {
+      "macro_f1": 0.22319159743773181,
+      "accuracy": 0.5035273034352499
+    },
+    "resume_only": {
+      "macro_f1": 0.41661741621581266,
+      "accuracy": 0.43609790687630146
+    },
+    "job_only": {
+      "macro_f1": 0.3049442248794404,
+      "accuracy": 0.45888401116504535
+    },
+    "combined_text": {
+      "macro_f1": 0.4122315096691346,
+      "accuracy": 0.47173967136604206
+    },
+    "pairwise": {
+      "macro_f1": 0.3979964312647375,
+      "accuracy": 0.46563628510833055
+    }
+  }
+}

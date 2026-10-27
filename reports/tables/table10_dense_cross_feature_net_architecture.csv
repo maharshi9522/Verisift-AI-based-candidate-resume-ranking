@@ -1,0 +1,7 @@
+Sub-Network,Layer Details,Input Features
+Branch 1 (Identity),"Linear(768, 256) -> LayerNorm(256) -> GELU() -> Dropout(0.20)",R (384d) + J (384d)
+Branch 2 (Interaction),"Linear(769, 256) -> LayerNorm(256) -> GELU() -> Dropout(0.20)","|R-J| (384d) + R*J (384d) + cos(R, J) (1d)"
+Fusion Layer,"Concatenation [Branch 1, Branch 2] -> 512d",Decoupled 256d + 256d representations
+Projection 1,"Linear(512, 256) -> LayerNorm(256) -> GELU() -> Dropout(0.15)",Fused 512d feature representation
+Projection 2,"Linear(256, 64) -> LayerNorm(64) -> GELU()",Intermediate 256d latent vector
+Output Head,"Linear(64, 3) -> 3-class logits","No Fit (0), Potential Fit (1), Good Fit (2)"

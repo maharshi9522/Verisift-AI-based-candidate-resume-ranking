@@ -1,0 +1,29 @@
+{
+  "stage": "5",
+  "evaluation_dataset": "test.csv",
+  "dataset_sha256": "f3c48f4cc3559bf192ebb9c241a30c601b5b8b3eee6f1656dd4d26dfd4b0887a",
+  "clean_test_rows": 1759,
+  "primary_model": {
+    "name": "E4 PyTorch Pairwise MLP",
+    "weights_file": "artifacts/semantic_ranker/semantic_ranker_mlp.pt",
+    "architecture": "PairwiseMLP (Linear 1536->256->64->3, BatchNorm, Dropout)",
+    "input_features": "E4: [R, J, |R-J|, R*J] (1536d)"
+  },
+  "comparison_models": [
+    {
+      "name": "Stage 4D E4 Rich Pairwise Logistic Regression",
+      "weights_file": "artifacts/semantic_ranker/semantic_ranker_logreg.joblib"
+    },
+    {
+      "name": "Stage 4C TF-IDF Combined Baseline",
+      "weights_file": "artifacts/baseline/baseline_pipeline.joblib"
+    }
+  ],
+  "encoder": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "device": "cpu",
+    "truncation": 256,
+    "normalization": "L2_unit_norm"
+  },
+  "score_formula": "100 * (0.0 * P(No Fit) + 0.5 * P(Potential Fit) + 1.0 * P(Good Fit))"
+}

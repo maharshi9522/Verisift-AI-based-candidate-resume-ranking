@@ -1,0 +1,7 @@
+Class,Precision,Recall,F1-Score,Support
+No Fit,0.8551,0.8872,0.8708,399
+Potential Fit,0.7433,0.695,0.7183,200
+Good Fit,0.798,0.79,0.794,200
+Macro Average,0.7988,0.7907,0.7944,799
+Weighted Average,0.8129,0.8148,0.8134,799
+Overall Accuracy,0.8148,0.8148,0.8148,799
